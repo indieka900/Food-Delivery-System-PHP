@@ -1,0 +1,11 @@
+**Database Name: food_delivery_system**
+
+**Developed by MR. AMIT K. YADAV, MR. UJWOL SHRESTHA, MS. NIKITA ACHARYA AND MR. RAKESH K. YADAV**
+
+**Recommended PHP Version 5.6, 7.4**
+
+**Admin Login Details**
+
+Username: admin
+Password: 
+
