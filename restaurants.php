@@ -34,21 +34,18 @@ session_start();
                         <li class="nav-item"> <a class="nav-link active" href="restaurants.php">Restaurants <span class="sr-only"></span></a> </li>
 
                         <?php
-						if(empty($_SESSION["user_id"]))
-							{
-								echo '<li class="nav-item"><a href="login.php" class="nav-link active">Login</a> </li>
+                        if (empty($_SESSION["user_id"])) {
+                            echo '<li class="nav-item"><a href="login.php" class="nav-link active">Login</a> </li>
 							  <li class="nav-item"><a href="registration.php" class="nav-link active">Register</a> </li>';
-							}
-						else
-							{
-									
-									
-										echo  '<li class="nav-item"><a href="your_orders.php" class="nav-link active">My Orders</a> </li>';
-									echo  '<li class="nav-item"><a href="logout.php" class="nav-link active">Logout</a> </li>';
-							}
+                        } else {
 
-						?>
-                     
+
+                            echo  '<li class="nav-item"><a href="your_orders.php" class="nav-link active">My Orders</a> </li>';
+                            echo  '<li class="nav-item"><a href="logout.php" class="nav-link active">Logout</a> </li>';
+                        }
+
+                        ?>
+
 
                     </ul>
                 </div>
@@ -75,7 +72,7 @@ session_start();
                 </div>
             </div>
         </div>
-     
+
         <section class="restaurants-page">
             <div class="container">
                 <div class="row">
@@ -84,18 +81,17 @@ session_start();
                     <div class="col-xs-12 col-sm-7 col-md-7 col-lg-9">
                         <div class="bg-gray restaurant-entry">
                             <div class="row">
-                                <?php $ress= mysqli_query($db,"select * from restaurant");
-									      while($rows=mysqli_fetch_array($ress))
-										  {
-													
-						
-													 echo' <div class="col-sm-12 col-md-12 col-lg-8 text-xs-center text-sm-left">
+                                <?php $ress = mysqli_query($db, "select * from restaurant");
+                                while ($rows = mysqli_fetch_array($ress)) {
+
+
+                                    echo ' <div class="col-sm-12 col-md-12 col-lg-8 text-xs-center text-sm-left">
 															<div class="entry-logo">
-																<a class="img-fluid" href="dishes.php?res_id='.$rows['rs_id'].'" > <img src="admin/Res_img/'.$rows['image'].'" alt="Food logo"></a>
+																<a class="img-fluid" href="dishes.php?res_id=' . $rows['rs_id'] . '" > <img src="admin/Res_img/' . $rows['image'] . '" alt="Food logo"></a>
 															</div>
 															<!-- end:Logo -->
 															<div class="entry-dscr">
-																<h5><a href="dishes.php?res_id='.$rows['rs_id'].'" >'.$rows['title'].'</a></h5> <span>'.$rows['address'].'</span>
+																<h5><a href="dishes.php?res_id=' . $rows['rs_id'] . '" >' . $rows['title'] . '</a></h5> <span>' . $rows['address'] . '</span>
 																
 															</div>
 															<!-- end:Entry description -->
@@ -105,14 +101,14 @@ session_start();
 																<div class="right-content bg-white">
 																	<div class="right-review">
 																		
-																		<a href="dishes.php?res_id='.$rows['rs_id'].'" class="btn btn-purple">View Menu</a> </div>
+																		<a href="dishes.php?res_id=' . $rows['rs_id'] . '" class="btn btn-purple">View Menu</a> </div>
 																</div>
 																<!-- end:right info -->
 															</div>';
-										  }
-						
-						
-						?>
+                                }
+
+
+                                ?>
 
                             </div>
 
